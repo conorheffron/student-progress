@@ -39,11 +39,11 @@ def get_book_details_requests_csv(file_address: str) -> (int, int):
     page_cnt = 0
 
     # read file into memory
-    with closing(requests.get(file_address, stream=True)) as r:
-        lines = [line.decode('utf-8') for line in r.iter_lines()]
-        reader = csv.reader(lines, delimiter=",")
+    with closing(requests.get(file_address, stream=True)) as reader:
+        lines = [line.decode('utf-8') for line in reader.iter_lines()]
+        rows = csv.reader(lines, delimiter=",")
         # loop through each line in fileAddress (init/inc counters for pages & number of books)
-        for row in reader:
+        for row in rows:
             # print(row)
             book_cnt += 1
             curr_pc = row[3]
@@ -59,15 +59,21 @@ def get_book_details_pandas(file_address: str) -> (int, int):
     response.raise_for_status()  # Ensure the request was successful
 
     # Read the CSV content into a DataFrame
-    df = pd.read_csv(StringIO(response.text), header=None, names=['id', 'read_name', 'book_name', 'pages_read'])
-    book_cnt = df.count()
-    page_cnt = df.pages_read.sum()
+    df_books_prog = pd.read_csv(StringIO(response.text),
+                     header=None,
+                     names=['id', 'read_name', 'book_name', 'pages_read'])
+    book_cnt = df_books_prog.count()
+    page_cnt = df_books_prog.pages_read.sum()
 
     return int(book_cnt.iloc[0]), int(page_cnt)
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="A simple script to check student ready progress.")
-    parser.add_argument("--fileAddr", type=str, required=True, help="HTTP Address for File Content for analysis")
+    parser = argparse.ArgumentParser(
+        description="A simple script to check student ready progress.")
+    parser.add_argument("--fileAddr",
+                        type=str,
+                        required=True,
+                        help="HTTP Address for File Content for analysis")
     # Parse the arguments
     args = parser.parse_args()
 
