@@ -1,5 +1,7 @@
 # student-progress
 
+[![Pip & Pytest CI](https://github.com/conorheffron/student-progress/actions/workflows/python-app.yml/badge.svg)](https://github.com/conorheffron/student-progress/actions/workflows/python-app.yml)
+
 [![Pylint](https://github.com/conorheffron/student-progress/actions/workflows/pylint.yml/badge.svg)](https://github.com/conorheffron/student-progress/actions/workflows/pylint.yml)
 
 ## Tech
