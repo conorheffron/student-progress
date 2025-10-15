@@ -22,6 +22,8 @@ Test output: (in any format, as long as the numbers are output)
 Book count:  20015
 Page count:  2805094
 """
+import argparse
+
 import requests
 import csv
 from contextlib import closing
@@ -53,8 +55,14 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_hi('PyCharm')
-    print(get_book_details("https://conorheffron.github.io/student-books-test-data/students/books/data.txt"))
+
     # book count: 20015, page count: 2805094
     # (20015, 2805094)
+
+    parser = argparse.ArgumentParser(description="A simple script to check student ready progress.")
+    parser.add_argument("--fileAddr", type=str, required=True, help="HTTP Address for File Content for analysis")
+    # Parse the arguments
+    args = parser.parse_args()
+    print(get_book_details(args.fileAddr))
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
