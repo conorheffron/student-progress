@@ -1,5 +1,7 @@
 # student-progress
 
+[![Pylint](https://github.com/conorheffron/student-progress/actions/workflows/pylint.yml/badge.svg)](https://github.com/conorheffron/student-progress/actions/workflows/pylint.yml)
+
 ## Tech
  - Python 3, venv, pandas, requests
 
