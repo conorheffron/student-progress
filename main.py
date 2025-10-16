@@ -42,15 +42,14 @@ def get_book_details_requests_csv(file_address: str) -> (int, int):
     with closing(requests.get(file_address, stream=True)) as reader:
         lines = [line.decode('utf-8') for line in reader.iter_lines()]
         rows = csv.reader(lines, delimiter=",")
-        # loop through each line in fileAddress (init/inc counters for pages & number of books)
+        # loop through each line in file (init/inc counters for pages read & number of books)
         for row in rows:
             # print(row)
             book_cnt += 1
             curr_pc = row[3]
             page_cnt += int(curr_pc)
 
-    # create result to return
-    # print(f"book count: {book_cnt}, page count: {page_cnt}")
+    # create result to return (tuple -> integer, integer)
     return book_cnt, page_cnt
 
 def get_book_details_pandas(file_address: str) -> (int, int):
@@ -62,23 +61,28 @@ def get_book_details_pandas(file_address: str) -> (int, int):
     df_books_prog = pd.read_csv(StringIO(response.text),
                      header=None,
                      names=['id', 'read_name', 'book_name', 'pages_read'])
+    
+    # the number of books referenced in txt file
     book_cnt = df_books_prog.count()
+    # the number of pages read in total
     page_cnt = df_books_prog.pages_read.sum()
 
+    # return tuple containing results
     return int(book_cnt.iloc[0]), int(page_cnt)
 
 if __name__ == '__main__':
+    # set web file as mandatory process parameter
     parser = argparse.ArgumentParser(
         description="A simple script to check student ready progress.")
     parser.add_argument("--fileAddr",
                         type=str,
                         required=True,
                         help="HTTP Address for File Content for analysis")
+    
     # Parse the arguments
     args = parser.parse_args()
-
-    # Expected -> book count: 20015, page count: 2805094
-    # (20015, 2805094)
     url = args.fileAddr
+
+    # print results to console
     print(f"Result of get_book_details_requests_csv={get_book_details_requests_csv(url)}")
     print(f"Result of get_book_details_pandas={get_book_details_pandas(url)}")
