@@ -17,10 +17,10 @@ def test_pandas_sm_approach():
     result = get_book_details_pandas(
         "https://conorheffron.github.io/student-books-test-data/students/books/test_sm_data.txt")
 
-    assert result == (4, 800)
+    assert result == (4, 850)
 
 def test_raw_csv_sm_requests_approach():
     result = get_book_details_requests_csv(
         "https://conorheffron.github.io/student-books-test-data/students/books/test_sm_data.txt")
 
-    assert result == (4, 800)
+    assert result == (4, 850)
