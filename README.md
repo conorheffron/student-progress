@@ -13,7 +13,7 @@
 ### Command Line Usage
 #### - Successful Execution
 ```shell
-(.venv) student-progress % python3 main.py --fileAddr="https://conorheffron.github.io/student-books-test-data/students/books/data.txt"
+(.venv) % python3 main.py --fileAddr="https://conorheffron.github.io/student-books-test-data/students/books/data.txt"
 ```
 #### - Cosnole Output
  ```shell
@@ -22,7 +22,7 @@
  ```
 #### - Failed Execution (missing argument `--fileAddr`)
 ```shell
-(.venv) student-progress % python3 main.py
+(.venv) % python3 main.py
 ```
 #### - Cosnole Output
  ```shell
