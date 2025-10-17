@@ -11,20 +11,20 @@
  - Python 3, venv, pandas, requests
 
 ### Command Line Usage
- - Successful Execution
+#### - Successful Execution
 ```shell
 (.venv) student-progress % python3 main.py --fileAddr="https://conorheffron.github.io/student-books-test-data/students/books/data.txt"
 ```
- - Cosnole Output
+#### - Cosnole Output
  ```shell
  Result of get_book_details_requests_csv=(20015, 2805094)
  Result of get_book_details_pandas=(20015, 2805094)
  ```
- - Failed Execution (missing argument `--fileAddr`
+#### - Failed Execution (missing argument `--fileAddr`)
 ```shell
 (.venv) student-progress % python3 main.py
 ```
- - Cosnole Output
+#### - Cosnole Output
  ```shell
  usage: main.py [-h] --fileAddr FILEADDR
  main.py: error: the following arguments are required: --fileAddr
