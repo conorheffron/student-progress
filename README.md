@@ -15,7 +15,7 @@
 ```shell
 (.venv) % python3 main.py --fileAddr="https://conorheffron.github.io/student-books-test-data/students/books/data.txt"
 ```
-#### - Cosnole Output
+#### - Console Output
  ```shell
  Result of get_book_details_requests_csv=(20015, 2805094)
  Result of get_book_details_pandas=(20015, 2805094)
@@ -24,7 +24,7 @@
 ```shell
 (.venv) % python3 main.py
 ```
-#### - Cosnole Output
+#### - Console Output
  ```shell
  usage: main.py [-h] --fileAddr FILEADDR
  main.py: error: the following arguments are required: --fileAddr
