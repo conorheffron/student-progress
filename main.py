@@ -61,11 +61,11 @@ def get_book_details_pandas(file_address: str) -> (int, int):
 if __name__ == '__main__':
     # set web file as mandatory process parameter
     parser = argparse.ArgumentParser(
-        description="A simple script to check student ready progress.")
+        description="A simple script to check student reading progress.")
     parser.add_argument("--fileAddr",
                         type=str,
                         required=True,
-                        help="HTTP Address for File Content for analysis")
+                        help="HTTP Address or URL for File Content to be analysed")
     
     # Parse the arguments
     args = parser.parse_args()
