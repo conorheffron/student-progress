@@ -8,7 +8,7 @@
  - [student-books-test-data](https://conorheffron.github.io/student-books-test-data/)
 
 ## Tech
- - Python 3, venv, pandas, requests
+ - Python 3, venv, pandas, requests, json
 
 ### Command Line Usage
 #### - Successful Execution
