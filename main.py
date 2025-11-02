@@ -22,6 +22,7 @@ from io import StringIO
 import pandas as pd
 import requests
 
+
 def get_book_details_requests_csv(file_address: str) -> (int, int):
     book_cnt = 0
     page_cnt = 0
@@ -39,6 +40,7 @@ def get_book_details_requests_csv(file_address: str) -> (int, int):
 
     # create result to return (tuple -> integer, integer)
     return book_cnt, page_cnt
+
 
 def get_book_details_pandas(file_address: str) -> (int, int):
     # Fetch the content using requests
@@ -58,14 +60,15 @@ def get_book_details_pandas(file_address: str) -> (int, int):
     # return tuple containing results
     return int(book_cnt.iloc[0]), int(page_cnt)
 
+
 if __name__ == '__main__':
     # set web file as mandatory process parameter
     parser = argparse.ArgumentParser(
-        description="A simple script to check student ready progress.")
+        description="A simple script to check student reading progress.")
     parser.add_argument("--fileAddr",
                         type=str,
                         required=True,
-                        help="HTTP Address for File Content for analysis")
+                        help="HTTP Address or URL for File Content to be analysed")
     
     # Parse the arguments
     args = parser.parse_args()
