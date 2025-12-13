@@ -9,7 +9,7 @@ mccabe==0.7.0
 numpy==2.3.5
 packaging==25.0
 pandas==2.3.3
-platformdirs==4.5.0
+platformdirs==4.5.1
 pluggy==1.6.0
 Pygments==2.19.2
 pylint==4.0.4
