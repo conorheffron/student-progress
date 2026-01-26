@@ -7,7 +7,7 @@ iniconfig==2.3.0
 isort==7.0.0
 mccabe==0.7.0
 numpy==2.4.1
-packaging==25.0
+packaging==26.0
 pandas==2.3.3
 platformdirs==4.5.1
 pluggy==1.6.0
