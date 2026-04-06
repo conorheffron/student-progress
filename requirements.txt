@@ -1,6 +1,6 @@
 astroid==4.0.4
 certifi==2026.2.25
-charset-normalizer==3.4.6
+charset-normalizer==3.4.7
 dill==0.4.1
 idna==3.11
 iniconfig==2.3.0
