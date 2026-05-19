@@ -16,7 +16,7 @@ pylint==4.0.5
 pytest==9.0.3
 python-dateutil==2.9.0.post0
 pytz==2026.2
-requests==2.34.0
+requests==2.34.2
 six==1.17.0
 tomlkit==0.15.0
 tzdata==2026.2
