@@ -6,7 +6,7 @@ idna==3.18
 iniconfig==2.3.0
 isort==8.0.1
 mccabe==0.7.0
-numpy==2.4.6
+numpy==2.5.1
 packaging==26.2
 pandas==3.0.3
 platformdirs==4.10.0
